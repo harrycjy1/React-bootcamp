@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { SampleConsumer } from '../contexts/sample'
+import React, { useState, useEffect, useContext } from 'react'
+import { SampleConsumer, Context } from '../contexts/sample'
 
 const Sends = props => {
   const [input, setInput] = useState('')
@@ -26,11 +26,10 @@ const Sends = props => {
 }
 
 const SendsContainer = () => {
-  return (
-    <SampleConsumer>
-      {({ state, action }) => <Sends value={state} setValue={action}></Sends>}
-    </SampleConsumer>
-  )
+  const sample = useContext(Context)
+  console.log(sample)
+
+  return <Sends value={sample.state} setValue={sample.action}></Sends>
 }
 
 export default SendsContainer

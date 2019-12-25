@@ -17,4 +17,4 @@ const SampleProvider = props => {
   return <Provider value={something}>{props.children}</Provider>
 }
 
-export { SampleConsumer, SampleProvider }
+export { SampleConsumer, SampleProvider, Context }
